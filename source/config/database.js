@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const mongoDBConnect = async () => {
-  await mongoose.connect('mongodb://docker:docker@localhost:27017/aula-api?authSource=admin')
+  await mongoose.connect(process.env.DATABASE_URL)
   console.log('Server -> MongoDB connected')
 }
 
