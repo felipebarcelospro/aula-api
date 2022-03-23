@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express');
 const cors = require('cors');
 
@@ -20,6 +22,6 @@ server.use('/posts', postRouter)
 /* Database */
 database()
 
-server.listen(3333, () => {
-  console.log('Server -> Started on port 3333');
+server.listen(process.env.PORT, () => {
+  console.log(`Server -> Started on port ${process.env.PORT}`);
 })
